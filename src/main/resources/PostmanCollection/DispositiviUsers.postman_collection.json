@@ -1,0 +1,1061 @@
+{
+	"info": {
+		"_postman_id": "cf720e11-40e1-44b0-8680-cb93d67e8203",
+		"name": "DispositiviUsers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26945437"
+	},
+	"item": [
+		{
+			"name": "REGISTERuser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"mario\",\r\n    \"name\": \"secondo\",\r\n    \"lastname\": \"utente\",\r\n    \"email\": \"secondo.utente@example.com\",\r\n    \"password\": 1234,\r\n    \"roles\": [\"ROLE_ADMIN\"],\r\n    \"dispositivi\":[]\r\n    \r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "REGISTERuser",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"giuseppe\",\r\n    \"name\": \"secondo\",\r\n    \"lastname\": \"utente\",\r\n    \"email\": \"giuseppe.utente@example.com\",\r\n    \"password\": 1234,\r\n    \"roles\": [\"ROLE_USER\"],\r\n    \"dispositivi\":[]\r\n    \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Apr 2023 12:57:15 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "User registered successfully!."
+				}
+			]
+		},
+		{
+			"name": "REGISTERadmin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGINGuser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "LOGINGuser",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"svy\",\r\n   \r\n    \"password\": 1234\r\n\r\n    \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Apr 2023 14:05:08 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"username\": \"svy\",\n    \"accessToken\": \"eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdnkudXRlbnRlQGV4YW1wbGUuY29tIiwiaWF0IjoxNjgyMDg1OTA4LCJleHAiOjE2ODI2OTA3MDh9.3HiOLbQvcY5s_7o0BdgnvJT0FLOLdeWAvVb9eBfZbAjLvoPE_WcD3f3JzAs4vCv0\",\n    \"tokenType\": \"Bearer\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GETallUsers",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "GETallUsers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Apr 2023 12:57:32 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id_user\": 2,\n        \"username\": \"secondoutente\",\n        \"name\": \"secondo\",\n        \"lastname\": null,\n        \"email\": \"secondo.utente@example.com\",\n        \"password\": \"$2a$10$kw9zAgj2qcH.Wk4S.SLud.KxBuG1blKpDj7tkK2mfR.4cjT9meVwe\",\n        \"roles\": [\n            {\n                \"id_role\": 1,\n                \"roleType\": \"ROLE_ADMIN\"\n            }\n        ],\n        \"dispositivi\": []\n    },\n    {\n        \"id_user\": 3,\n        \"username\": \"mario\",\n        \"name\": \"secondo\",\n        \"lastname\": null,\n        \"email\": \"mario.utente@example.com\",\n        \"password\": \"$2a$10$1J.sVV.8aDowZ/yhKSy1AeYIgrKQVvbRAB1veEP6.Bh3Jq4eUc1KG\",\n        \"roles\": [\n            {\n                \"id_role\": 1,\n                \"roleType\": \"ROLE_ADMIN\"\n            }\n        ],\n        \"dispositivi\": []\n    },\n    {\n        \"id_user\": 4,\n        \"username\": \"luca\",\n        \"name\": \"secondo\",\n        \"lastname\": null,\n        \"email\": \"luca.utente@example.com\",\n        \"password\": \"$2a$10$G4YtuTkRJIVIUtXunoLZOOI4LQ6.ryMfU79Wh0RQrnH59wLvVmxF.\",\n        \"roles\": [\n            {\n                \"id_role\": 1,\n                \"roleType\": \"ROLE_ADMIN\"\n            }\n        ],\n        \"dispositivi\": []\n    },\n    {\n        \"id_user\": 5,\n        \"username\": \"giuseppe\",\n        \"name\": \"secondo\",\n        \"lastname\": null,\n        \"email\": \"giuseppe.utente@example.com\",\n        \"password\": \"$2a$10$.kLERrs7dNK5SCEp9OMfQ.8Uj9cyV061.lf5rn5UA4HmozGS2ejtq\",\n        \"roles\": [\n            {\n                \"id_role\": 2,\n                \"roleType\": \"ROLE_USER\"\n            }\n        ],\n        \"dispositivi\": []\n    }\n]"
+				},
+				{
+					"name": "GETallUsers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Apr 2023 14:05:30 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id_user\": 1,\n        \"username\": \"giuseppe\",\n        \"name\": \"secondo\",\n        \"lastname\": null,\n        \"email\": \"giuseppe.utente@example.com\",\n        \"password\": \"$2a$10$9EY0Z9mrEn8rSHnR92S21e.ElP4U1PEKvb5qSMNMDE0SbBoAvn9Aa\",\n        \"dispositivi\": [],\n        \"roles\": [\n            {\n                \"id_role\": 2,\n                \"roleType\": \"ROLE_USER\"\n            }\n        ]\n    },\n    {\n        \"id_user\": 2,\n        \"username\": \"luca\",\n        \"name\": \"luca\",\n        \"lastname\": null,\n        \"email\": \"luca.utente@example.com\",\n        \"password\": \"$2a$10$uoFjY6XC9Fl5tdlD3pR7zeS2yPHZsrmSicllL2iwsYEpAaUQdJx3i\",\n        \"dispositivi\": [],\n        \"roles\": [\n            {\n                \"id_role\": 2,\n                \"roleType\": \"ROLE_USER\"\n            }\n        ]\n    },\n    {\n        \"id_user\": 3,\n        \"username\": \"mario\",\n        \"name\": \"mario\",\n        \"lastname\": null,\n        \"email\": \"mario.utente@example.com\",\n        \"password\": \"$2a$10$iin49TCNzK4JCSR8OKjaQ.lou4cNgdTYKRVzbT5136TQXFg9YnKvm\",\n        \"dispositivi\": [],\n        \"roles\": [\n            {\n                \"id_role\": 2,\n                \"roleType\": \"ROLE_USER\"\n            }\n        ]\n    },\n    {\n        \"id_user\": 4,\n        \"username\": \"svy\",\n        \"name\": \"svy\",\n        \"lastname\": null,\n        \"email\": \"svy.utente@example.com\",\n        \"password\": \"$2a$10$JjGsj5ClsEsBn1ADjVWTLeskPIso8XLEFlyIgCCjfSwBRByNADVUm\",\n        \"dispositivi\": [],\n        \"roles\": [\n            {\n                \"id_role\": 2,\n                \"roleType\": \"ROLE_USER\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GETuserByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GETuserByID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Apr 2023 12:58:07 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id_user\": 2,\n    \"username\": \"secondoutente\",\n    \"name\": \"secondo\",\n    \"lastname\": null,\n    \"email\": \"secondo.utente@example.com\",\n    \"password\": \"$2a$10$kw9zAgj2qcH.Wk4S.SLud.KxBuG1blKpDj7tkK2mfR.4cjT9meVwe\",\n    \"roles\": [\n        {\n            \"id_role\": 1,\n            \"roleType\": \"ROLE_ADMIN\"\n        }\n    ],\n    \"dispositivi\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "GETallDispositibi",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "GETallDispositibi",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/dispositivo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dispositivo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Apr 2023 13:16:54 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id_dipositivo\": 1,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Lucky dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 2,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Molly dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 3,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Oliver dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 4,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Smokey dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 5,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Lucy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 6,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Sam dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 7,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Lucy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 8,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Tiger dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 9,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Misty dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 10,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Tiger dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 11,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Tiger dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 12,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Tiger dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 13,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Lily dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 14,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Tiger dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 15,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Coco dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 16,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Oliver dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 17,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Lucy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 18,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Chloe dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 19,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Simba dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 20,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Missy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 21,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Lily dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 22,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Milo dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 23,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Coco dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 24,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Lily dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 25,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Felix dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 26,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Lucy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 27,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Smudge dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 28,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Felix dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 29,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Shadow dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 30,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Oliver dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 31,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Shadow dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 32,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Sooty dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 33,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Milo dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 34,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Missy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 35,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Lucky dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 36,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Felix dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 37,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Bella dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 38,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Oliver dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 39,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Chloe dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 40,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Simba dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 41,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Millie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 42,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Shadow dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 43,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Smokey dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 44,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Smudge dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 45,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Sooty dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 46,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Shadow dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 47,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Milo dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 48,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Alfie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 49,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Felix dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 50,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Alfie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 51,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Molly dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 52,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Bella dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 53,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Poppy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 54,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Oliver dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 55,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Smokey dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 56,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Molly dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 57,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Bella dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 58,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Missy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 59,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Charlie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 60,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Lily dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 61,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Oscar dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 62,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Oliver dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 63,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Smudge dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 64,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Lucy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 65,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Tiger dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 66,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Millie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 67,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Charlie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 68,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Misty dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 69,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Lily dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 70,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Sam dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 71,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Angel dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 72,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Lily dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 73,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Shadow dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 74,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Daisy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 75,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Angel dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 76,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Jasper dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 77,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Smokey dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 78,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Poppy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 79,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Poppy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 80,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Coco dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 81,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Alfie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 82,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Angel dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 83,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Millie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 84,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Tiger dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 85,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Jasper dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 86,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Lucky dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 87,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Smudge dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 88,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Bella dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 89,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Lucy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 90,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Poppy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 91,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Sam dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 92,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Lily dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 93,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Lucky dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 94,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Daisy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 95,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Felix dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 96,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Alfie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 97,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Smokey dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 98,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Charlie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 99,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Max dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 100,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Lucky dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 101,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Chloe dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 102,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Shadow dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 103,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Simba dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 104,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Smudge dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 105,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Felix dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 106,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Felix dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 107,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Simba dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 108,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Lucy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 109,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Smudge dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 110,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Max dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 111,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Oscar dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 112,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Alfie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 113,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Smudge dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 114,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Max dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 115,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Tiger dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 116,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Sam dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 117,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Chloe dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 118,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Millie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 119,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Molly dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 120,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Chloe dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 121,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Missy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 122,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Milo dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 123,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Sooty dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 124,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Sooty dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 125,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Charlie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 126,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Chloe dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 127,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Poppy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 128,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Molly dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 129,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Millie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 130,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Lily dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 131,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Felix dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 132,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Tiger dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 133,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Oscar dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 134,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Oscar dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 135,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Charlie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 136,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Sooty dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 137,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Misty dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 138,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Daisy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 139,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Lucky dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 140,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Alfie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 141,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Alfie dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 142,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Coco dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 143,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Shadow dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 144,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Bella dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 145,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Milo dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 146,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Angel dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 147,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Lucky dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 148,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Sam dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 149,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Smokey dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 150,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Oscar dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 151,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Missy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 152,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Lucy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 153,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Oscar dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 154,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Molly dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 155,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Oscar dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 156,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Chloe dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 157,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Coco dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 158,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Tiger dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 159,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Lucy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 160,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Smudge dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 161,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Oscar dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 162,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Misty dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 163,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Lucky dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 164,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Milo dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 165,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Max dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 166,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Jasper dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 167,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Shadow dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 168,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Max dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 169,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Coco dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 170,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Shadow dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 171,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Coco dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 172,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Daisy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 173,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Bella dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 174,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Simba dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 175,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Misty dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 176,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Molly dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 177,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Lucy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 178,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Bella dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 179,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Lily dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 180,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Max dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 181,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Misty dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 182,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Missy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 183,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Misty dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 184,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Oliver dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 185,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Sooty dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 186,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Oscar dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 187,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Shadow dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 188,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Tiger dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 189,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Max dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 190,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Angel dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 191,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Angel dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 192,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Coco dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 193,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Smudge dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 194,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Missy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 195,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Simba dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 196,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Milo dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 197,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Misty dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 198,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Sam dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 199,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Misty dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 200,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Poppy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 201,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Lucky dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 202,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Oscar dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 203,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Missy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 204,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Milo dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 205,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Oscar dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 206,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Lucky dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 207,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Oscar dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 208,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Simba dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 209,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Shadow dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 210,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Chloe dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 211,\n        \"statoDispositivo\": \"IN_MANUTENZIONE\",\n        \"nomeDispositivo\": \"Misty dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 212,\n        \"statoDispositivo\": \"ASSEGNATO\",\n        \"nomeDispositivo\": \"Lucky dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 213,\n        \"statoDispositivo\": \"DISMESSO\",\n        \"nomeDispositivo\": \"Lucy dispositivo\"\n    },\n    {\n        \"id_dipositivo\": 214,\n        \"statoDispositivo\": \"DISPONIBILE\",\n        \"nomeDispositivo\": \"Lily dispositivo\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GETdispositivoBYID",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "GETdispositivoBYID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/dispositivo/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dispositivo",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Apr 2023 13:17:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id_dipositivo\": 2,\n    \"statoDispositivo\": \"IN_MANUTENZIONE\",\n    \"nomeDispositivo\": \"Molly dispositivo\"\n}"
+				}
+			]
+		},
+		{
+			"name": "POSTdispositivo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"statoDispositivo\": \"DISPONIBILE\",\r\n    \"nomeDispositivo\": \"myDispositivo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": [
+				{
+					"name": "POSTdispositivo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"statoDispositivo\": \"DISPONIBILE\",\r\n    \"nomeDispositivo\": \"myDispositivo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/dispositivo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dispositivo"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Apr 2023 13:19:48 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id_dipositivo\": 215,\n    \"statoDispositivo\": \"DISPONIBILE\",\n    \"nomeDispositivo\": \"myDispositivo\"\n}"
+				}
+			]
+		},
+		{
+			"name": "COLLEGAdispositivoADuser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdnlhZG1pbi51dGVudGVAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODIwODYwNzAsImV4cCI6MTY4MjY5MDg3MH0.akaxeu6zuas6chJSCxuY1lv3xfEV1fyR41is3FjM4AsGfhQ8MoFowWUH_hmH8log",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dispositivo/5/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dispositivo",
+						"5",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "COLLEGAdispositivoADuser",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/dispositivo/215/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dispositivo",
+								"215",
+								"2"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Apr 2023 13:20:42 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Dispositivo collegato con sucesso"
+				},
+				{
+					"name": "COLLEGAdispositivoADuser",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/dispositivo/5/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dispositivo",
+								"5",
+								"4"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Apr 2023 14:08:35 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Dispositivo collegato con sucesso"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8080/user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzdnkudXRlbnRlQGV4YW1wbGUuY29tIiwiaWF0IjoxNjgyMDg1OTA4LCJleHAiOjE2ODI2OTA3MDh9.3HiOLbQvcY5s_7o0BdgnvJT0FLOLdeWAvVb9eBfZbAjLvoPE_WcD3f3JzAs4vCv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
