@@ -21,6 +21,8 @@ public class DispositivoService {
 	@Autowired
 	UserRepo uRepo;
 	@Autowired
+	UserService uService;
+	@Autowired
 	@Qualifier("FakeDispositivo")
 	private ObjectProvider<Dispositivo> fakeDispositivoProvider;
 	@Autowired
@@ -32,26 +34,32 @@ public class DispositivoService {
 		}
 	}
 	public String collegaDispositivoAdUser(Long id_dis,Long id_user) {
-		if (!dRepo.existsById(id_dis)) {
+		if (!dRepo.existsById(id_dis) && !uRepo.existsById(id_user) && dRepo.findById(id_dis).get().getStatoDispositivo() != StatoDispositivo.DISPONIBILE) {
 			throw new EntityNotFoundException("Dispositivo not exists!!!");
+		}else {
+			User u = uRepo.findById(id_user).get();
+			Dispositivo d = dRepo.findById(id_dis).get();
+			System.out.println("aggiungo dis");
+		System.out.println(u.getDispositivi() + " " + u.getName());
+		u.getDispositivi().forEach(dis->System.out.println(dis));
+		u.addDipositivo(d);
+			
+			d.setStatoDispositivo(StatoDispositivo.ASSEGNATO);
+			d.setUser(u);
+			System.out.println("salvo dis");
+		uRepo.save(u);
+			//uService.updateUtente(u);
+			dRepo.save(d);
+			return "Dispositivo collegato con sucesso";
+			
 		}
-		if(!uRepo.existsById(id_user)) {
-			throw new EntityNotFoundException("User not exists!!!");
-		}
-		if(dRepo.findById(id_dis).get().getStatoDispositivo() != StatoDispositivo.DISPONIBILE) {
-			throw new EntityNotFoundException("dispositivo non disponibile!!!");
-		}
-		User u = uRepo.findById(id_user).get();
-		Dispositivo d = dRepo.findById(id_dis).get();
-		System.out.println("aggiungo dis");
-	//u.addDipositivo(d);
+//		if(!uRepo.existsById(id_user)) {
+//			throw new EntityNotFoundException("User not exists!!!");
+//		}
+//		if(dRepo.findById(id_dis).get().getStatoDispositivo() != StatoDispositivo.DISPONIBILE) {
+//			throw new EntityNotFoundException("dispositivo non disponibile!!!");
+//		}
 		
-		d.setStatoDispositivo(StatoDispositivo.ASSEGNATO);
-		d.setUser(u);
-		System.out.println("salvo dis");
-	uRepo.save(u);
-		dRepo.save(d);
-		return "Dispositivo collegato con sucesso";
 	}
 	public Dispositivo saveDispositivo(Dispositivo u) {
 		dRepo.save(u);

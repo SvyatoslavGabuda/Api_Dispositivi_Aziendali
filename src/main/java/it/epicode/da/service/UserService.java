@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import it.epicode.da.model.Role;
 import it.epicode.da.model.User;
 import it.epicode.da.repository.UserRepo;
 
@@ -21,8 +22,13 @@ public class UserService {
 	@Autowired
 	@Qualifier("ParamsUser")
 	private ObjectProvider<User> paramUtenteProvider;
+	@Autowired
+	@Qualifier("FakeRole")
+	private ObjectProvider<Role> fakeRoleProvider;
+	@Deprecated
 	public void createAndSaveFakeUtente(int n) {
 		for (int i = 0; i < n; i++) {
+			
 			saveUser(fakeUtenteProvider.getObject());
 		}
 	}

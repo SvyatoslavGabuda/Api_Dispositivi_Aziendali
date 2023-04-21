@@ -22,11 +22,15 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+//@Data
+@Setter
+@Getter
 @Builder
 @Entity
 @Table(name = "dispositivi")
@@ -39,7 +43,7 @@ public class Dispositivo {
 	private String nomeDispositivo;
 	@JsonIgnoreProperties("dispositivi")
 	//@JsonBackReference(value = "utente_dispositivo")	
-	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER)
 	private User user;
 	
 }

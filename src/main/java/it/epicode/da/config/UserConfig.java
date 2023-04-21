@@ -65,7 +65,7 @@ public class UserConfig {
 		u.setEmail(u.getName() + "." + u.getLastname() + "@example.com");
 		u.setUsername(u.getName() + "." + u.getLastname());
 		u.setPassword("1234");
-		u.getRoles().add(fakeRole());
+		
 
 		return u;
 	}
