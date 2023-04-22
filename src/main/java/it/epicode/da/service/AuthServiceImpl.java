@@ -72,29 +72,32 @@ public class AuthServiceImpl implements AuthService{
 	        if(userRepository.existsByEmail(registerDto.getEmail())){
 	            throw new MyAPIException(HttpStatus.BAD_REQUEST, "Email is already exists!.");
 	        }
-
+System.out.println("creazione user");
 	        User user = new User();
 	        user.setName(registerDto.getName());
 	        user.setUsername(registerDto.getUsername());
 	        user.setEmail(registerDto.getEmail());
+	        user.setLastname(registerDto.getLastname());
 	        user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
 
 	        Set<Role> roles = new HashSet<>();
-	        
+	        System.out.println("assegnamento ruolo");
 	        if(registerDto.getRoles() != null) {
+	        	System.out.println("assegnamento ruolo1");
 		        registerDto.getRoles().forEach(role -> {
 		        	Role userRole = roleRepository.findByRoleType(getRole(role)).get();
 		        	roles.add(userRole);
 		        });
 	        } else {
+	        	System.out.println("assegnamento ruolo2");
 	        	Role userRole = roleRepository.findByRoleType(RoleType.ROLE_USER).get();
 	        	roles.add(userRole);
 	        }
-	        
+	        System.out.println("eggistrazto registro");
 	        user.setRoles(roles);
 	        System.out.println(user);
 	        userRepository.save(user);
-
+             System.out.println("utente Reggistrazto");
 	        return "User registered successfully!.";
 	    }
 	    

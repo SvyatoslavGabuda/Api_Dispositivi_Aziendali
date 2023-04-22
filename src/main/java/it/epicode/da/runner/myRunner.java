@@ -29,7 +29,7 @@ private Set<Role> userRole;
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("run");
-//		setRoleDefault();
+	//	setRoleDefault();
 		
 //		disSer.createAndSaveFakeDispositovo(100);
 		

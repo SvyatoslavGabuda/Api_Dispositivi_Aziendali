@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import it.epicode.da.enums.StatoDispositivo;
@@ -12,6 +14,7 @@ import it.epicode.da.model.Dispositivo;
 import it.epicode.da.model.User;
 import it.epicode.da.repository.DispositivoRepo;
 import it.epicode.da.repository.UserRepo;
+
 import jakarta.persistence.EntityNotFoundException;
 
 @Service
@@ -28,30 +31,33 @@ public class DispositivoService {
 	@Autowired
 	@Qualifier("ParamDispositivo")
 	private ObjectProvider<Dispositivo> paramDispositivoProvider;
+
 	public void createAndSaveFakeDispositovo(int n) {
 		for (int i = 0; i < n; i++) {
 			saveDispositivo(fakeDispositivoProvider.getObject());
 		}
 	}
-	public String collegaDispositivoAdUser(Long id_dis,Long id_user) {
-		if (!dRepo.existsById(id_dis) && !uRepo.existsById(id_user) && dRepo.findById(id_dis).get().getStatoDispositivo() != StatoDispositivo.DISPONIBILE) {
+
+	public String collegaDispositivoAdUser(Long id_dis, Long id_user) {
+		if (!dRepo.existsById(id_dis) && !uRepo.existsById(id_user)
+				&& dRepo.findById(id_dis).get().getStatoDispositivo() != StatoDispositivo.DISPONIBILE) {
 			throw new EntityNotFoundException("Dispositivo not exists!!!");
-		}else {
+		} else {
 			User u = uRepo.findById(id_user).get();
 			Dispositivo d = dRepo.findById(id_dis).get();
 			System.out.println("aggiungo dis");
-		System.out.println(u.getDispositivi() + " " + u.getName());
-		u.getDispositivi().forEach(dis->System.out.println(dis));
-		u.addDipositivo(d);
-			
+			System.out.println(u.getDispositivi() + " " + u.getName());
+			u.getDispositivi().forEach(dis -> System.out.println(dis));
+			u.addDipositivo(d);
+
 			d.setStatoDispositivo(StatoDispositivo.ASSEGNATO);
 			d.setUser(u);
 			System.out.println("salvo dis");
-		uRepo.save(u);
-			//uService.updateUtente(u);
+			uRepo.save(u);
+			// uService.updateUtente(u);
 			dRepo.save(d);
 			return "Dispositivo collegato con sucesso";
-			
+
 		}
 //		if(!uRepo.existsById(id_user)) {
 //			throw new EntityNotFoundException("User not exists!!!");
@@ -59,8 +65,9 @@ public class DispositivoService {
 //		if(dRepo.findById(id_dis).get().getStatoDispositivo() != StatoDispositivo.DISPONIBILE) {
 //			throw new EntityNotFoundException("dispositivo non disponibile!!!");
 //		}
-		
+
 	}
+
 	public Dispositivo saveDispositivo(Dispositivo u) {
 		dRepo.save(u);
 		return u;
@@ -101,5 +108,12 @@ public class DispositivoService {
 			dRepo.deleteById(id);
 			return "Dispositivo eliminato";
 		}
+	}
+
+	public Page<Dispositivo> findAllEdificioPageble(Pageable pag) {
+
+		Page<Dispositivo> res = dRepo.findAll(pag);
+		return res;
+
 	}
 }

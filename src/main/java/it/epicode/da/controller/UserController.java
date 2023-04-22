@@ -20,36 +20,37 @@ import org.springframework.web.bind.annotation.RestController;
 import it.epicode.da.model.User;
 import it.epicode.da.service.UserService;
 
-
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/user")
 public class UserController {
-@Autowired
-UserService uService;
+	@Autowired
+	UserService uService;
 
-@GetMapping
-@PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
-public ResponseEntity<List<User>> allUtenti( ){
-	List<User> listaUtenti = uService.findAllUtente();
-	ResponseEntity<List<User>> resp = new ResponseEntity<List<User>>(listaUtenti,HttpStatus.OK);
-	return resp;
-}
-@GetMapping("/{id}")
-@PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
-public ResponseEntity<User> idUtenti(@PathVariable Long id){
-	User u = uService.findUtenteById(id);
-	ResponseEntity<User> resp = new ResponseEntity<User>(u,HttpStatus.OK);
-	return resp;
-}
+	@GetMapping
+	@PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
+	public ResponseEntity<List<User>> allUtenti() {
+		List<User> listaUtenti = uService.findAllUtente();
+		ResponseEntity<List<User>> resp = new ResponseEntity<List<User>>(listaUtenti, HttpStatus.OK);
+		return resp;
+	}
+
+	@GetMapping("/{id}")
+	@PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
+	public ResponseEntity<User> idUtenti(@PathVariable Long id) {
+		User u = uService.findUtenteById(id);
+		ResponseEntity<User> resp = new ResponseEntity<User>(u, HttpStatus.OK);
+		return resp;
+	}
+
 //@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_VALUE)
 //@ResponseBody
 //public ResponseEntity<User> createUser(@RequestBody User u){
 //	return new ResponseEntity<User>(uService.saveUser(u),HttpStatus.CREATED);
 //}
-@DeleteMapping("/{id}")
-@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
-public ResponseEntity<String> deleteUser(@PathVariable Long id){
-	return new ResponseEntity<String>(uService.removeUtenteById(id),HttpStatus.OK);
-}
+	@DeleteMapping("/{id}")
+	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
+	public ResponseEntity<String> deleteUser(@PathVariable Long id) {
+		return new ResponseEntity<String>(uService.removeUtenteById(id), HttpStatus.OK);
+	}
 }

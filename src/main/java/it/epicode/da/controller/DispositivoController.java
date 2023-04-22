@@ -29,14 +29,14 @@ public class DispositivoController {
 	DispositivoService dSer;
 	@GetMapping
 	@PreAuthorize("hasRole('ADMIN')")
-	public ResponseEntity<List<Dispositivo>> allUtenti( ){
+	public ResponseEntity<List<Dispositivo>> alldispositivo( ){
 		List<Dispositivo> listaD = dSer.findAllDispositivi();
 		ResponseEntity<List<Dispositivo>> resp = new ResponseEntity<List<Dispositivo>>(listaD,HttpStatus.OK);
 		return resp;
 	}
 	@GetMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN')")
-	public ResponseEntity<Dispositivo> idUtenti(@PathVariable Long id){
+	public ResponseEntity<Dispositivo> idDispositivo(@PathVariable Long id){
 		Dispositivo u = dSer.findDispositivoById(id);
 		ResponseEntity<Dispositivo> resp = new ResponseEntity<Dispositivo>(u,HttpStatus.OK);
 		return resp;
@@ -44,7 +44,7 @@ public class DispositivoController {
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_VALUE)
 	@PreAuthorize("hasRole('ADMIN')")
 	@ResponseBody
-	public ResponseEntity<Dispositivo> createUser(@RequestBody Dispositivo u){
+	public ResponseEntity<Dispositivo> createDispositivo(@RequestBody Dispositivo u){
 		return new ResponseEntity<Dispositivo>(dSer.saveDispositivo(u),HttpStatus.CREATED);
 	}
 	@PostMapping("/{id_d}/{id_u}")	
@@ -54,7 +54,7 @@ public class DispositivoController {
 	}
 	@DeleteMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN')")
-	public ResponseEntity<String> deleteUser(@PathVariable Long id){
+	public ResponseEntity<String> deleteDispositivo(@PathVariable Long id){
 		return new ResponseEntity<String>(dSer.removeDispositivoById(id),HttpStatus.OK);
 	}
 }
