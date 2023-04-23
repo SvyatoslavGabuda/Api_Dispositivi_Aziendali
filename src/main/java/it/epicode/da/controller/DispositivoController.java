@@ -3,6 +3,8 @@ package it.epicode.da.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import it.epicode.da.model.Dispositivo;
 import it.epicode.da.model.User;
 import it.epicode.da.service.DispositivoService;
+
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -56,5 +60,17 @@ public class DispositivoController {
 	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<String> deleteDispositivo(@PathVariable Long id){
 		return new ResponseEntity<String>(dSer.removeDispositivoById(id),HttpStatus.OK);
+	}
+	@PutMapping()
+	@PreAuthorize("hasRole('MODERATOR') or hasRole('ADMIN')")
+	public ResponseEntity<?> updateUser(@RequestBody Dispositivo dis) {
+		return new ResponseEntity<Dispositivo>(dSer.updateDispositivo(dis), HttpStatus.CREATED);
+
+	}
+	@GetMapping("/pag")
+	public ResponseEntity<Page<Dispositivo>> allEdificiPag(Pageable pag) {
+		Page<Dispositivo>listaDisp = dSer.findAllDispositivoPageble(pag);
+		ResponseEntity<Page<Dispositivo>> resp = new ResponseEntity<Page<Dispositivo>>(listaDisp, HttpStatus.OK);
+		return resp;
 	}
 }

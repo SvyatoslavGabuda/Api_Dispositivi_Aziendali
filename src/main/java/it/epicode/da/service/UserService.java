@@ -5,12 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
 
 import it.epicode.da.model.Role;
 import it.epicode.da.model.User;
 import it.epicode.da.repository.UserRepo;
-
+import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
 @Service
 public class UserService {
@@ -36,13 +39,7 @@ public class UserService {
 		uRepo.save(u);
 	}
 
-	public void updateUtente(User u) {
-		if (!uRepo.existsById(u.getId_user())) {
-			throw new EntityNotFoundException("User not exists!!!");
-		} else {
-			uRepo.save(u);
-		}
-	}
+	
 	public User findUtenteById(Long id) {
 		if (!uRepo.existsById(id)) {
 			throw new EntityNotFoundException("User not exists!!!");
@@ -70,5 +67,18 @@ public class UserService {
 			uRepo.deleteById(id);
 			return "Utente eliminato";
 		}
+	}
+	public User updateUser(User user) {
+		if(!uRepo.existsById(user.getId_user())) {
+			throw new EntityExistsException("User not exists!!!");
+		}
+		uRepo.save(user);
+		return user;
+	}
+	public Page<User> findAllUsersPageble(Pageable pag) {
+
+		Page<User> res = uRepo.findAll(pag);
+		return res;
+
 	}
 }
